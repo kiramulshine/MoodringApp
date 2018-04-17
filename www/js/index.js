@@ -13,25 +13,6 @@ var app = {
     // 'pause', 'resume', etc.
     onDeviceReady: function() {
         this.receivedEvent('deviceready');
-         //**BLUETOOTH**
-        // connect to a bluetooth device
-        bluetoothSerial.connect([], connectSuccess, connectFailure);
-            function blueConnect(){
-                if (connectSuccess) {
-                    console.log('success');
-                }
-                if (connectFailure) {
-                    console.log('failure');
-                }
-            };
-        // confirm enabled bluetooth in console
-        bluetoothSerial.isEnabled(
-         function() {
-            console.log("Bluetooth is enabled");
-            },
-         function() {
-            console.log("Bluetooth is *not* enabled");
-        });
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
@@ -63,13 +44,12 @@ $("#showPaletteOnly").spectrum({
         printColor(color);
     },
     palette: [
-        ["rgb(0, 0, 0)", "rgb(67, 67, 67)", "rgb(102, 102, 102)", "rgb(204, 204, 204)"],
-        ["rgb(217, 217, 217)","rgb(255, 255, 255)", "rgb(152, 0, 0)", "rgb(255, 0, 0)"], 
-        ["rgb(255, 153, 0)", "rgb(255, 255, 0)", "rgb(0, 255, 0)", "rgb(0, 255, 255)"], 
-        ["rgb(74, 134, 232)", "rgb(0, 0, 255)", "rgb(153, 0, 255)", "rgb(255, 0, 255)"], 
-        ["rgb(255, 20, 147);", "rgb(162, 196, 201)", "rgb(164, 194, 244)", "rgb(159, 197, 232)"], 
-        ["rgb(180, 167, 214)", "rgb(213, 166, 189)", "rgb(204, 65, 37)", "rgb(224, 102, 102)"], 
-        ["rgb(246, 178, 107)", "rgb(255, 217, 102)", "rgb(204, 0, 0)", "rgb(106, 168, 79)"]
+        ["#000000", "#606060", "#c4c4c4", "#ffffff"],
+        ["#980000", "#ff0000", "#ff3b00", "#ff9900"], 
+        ["#ffff00", "#00ff00", "#00ffff", "#00a5ff"], 
+        ["#19ff00", "#00ff90", "#279163", "#131a6b"], 
+        ["#0013f9", "#6a00ff", "#3e0096", "#9d00ff"], 
+        ["#d4a1f4", "#f4a1df", "#f23ac3", "#f700b8"]
     ]
 });
 
@@ -81,7 +61,7 @@ function printColor(color) {
   console.log(text);   
   localStorage.setItem("currentColor", text);
 
-}
+};
 
 // **FORM PAGES**
 // submit enjoyment form, run accountSetup
@@ -96,7 +76,7 @@ function saveEnjoymentHandler(){
     window.location = "two.html" ;
 
     return true;
-}
+};
 
 // submit sadness form, run accountSetup
 document.addEventListener( "DOMContentLoaded", function(){
@@ -110,7 +90,7 @@ function saveSadnessHandler(){
     window.location = "three.html" ;
 
     return true;
-}
+};
 
 // submit disgust form, run accountSetup
 document.addEventListener( "DOMContentLoaded", function(){
@@ -124,7 +104,7 @@ function saveDisgustHandler(){
     window.location = "four.html" ;
 
     return true;
-}
+};
 
 // submit fear form, run accountSetup
 document.addEventListener( "DOMContentLoaded", function(){
@@ -138,7 +118,7 @@ function saveFearHandler(){
     window.location = "five.html" ;
 
     return true;
-}
+};
 
 // submit anger form, run accountSetup
 document.addEventListener( "DOMContentLoaded", function(){
@@ -152,7 +132,7 @@ function saveAngerHandler(){
     window.location = "moodMap.html" ;
 
     return true;
-}
+};
 
 // **END FORM PAGES**
 
@@ -172,11 +152,11 @@ function accountSetup( cName ){
 // setting up a database but nothing is currently being stored 
 // should replace with connection to Watson IoT IBM Cloud and remove this script
 
-var mydb;
-var shortName = 'WebSqlDB';
-var version = '1.0';
-var displayName = 'WebSqlDB';
-var maxSize = 65535;
+// var mydb;
+// var shortName = 'WebSqlDB';
+// var version = '1.0';
+// var displayName = 'WebSqlDB';
+// var maxSize = 65535;
 
     //var enjoyment = window.localStorage.getItem( "enjoyment" ) ;
     //console.log( enjoyment );
@@ -184,14 +164,13 @@ var maxSize = 65535;
     //$( "body#enjoyment .showPaletteOnly" ).val( enjoyment );
 
 
-// create database
-mydb = window.openDatabase(shortName, version, displayName, maxSize);
+// // create database
+// mydb = window.openDatabase(shortName, version, displayName, maxSize);
 
-// create table in database
-mydb.transaction(function(tx){
-  tx.executeSql('CREATE TABLE IF NOT EXISTS moodMap(enjoyment TEXT NOT NULL, sadness TEXT NOT NULL, disgust TEXT NOT NULL, fear TEXT NOT NULL, anger TEXT NOT NULL);');
-});
-
+// // create table in database
+// mydb.transaction(function(tx){
+//   tx.executeSql('CREATE TABLE IF NOT EXISTS moodMap(enjoyment TEXT NOT NULL, sadness TEXT NOT NULL, disgust TEXT NOT NULL, fear TEXT NOT NULL, anger TEXT NOT NULL);');
+// });
 
 
 
