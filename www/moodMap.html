@@ -6,6 +6,7 @@
         <meta name="format-detection" content="telephone=no">
         <meta name="msapplication-tap-highlight" content="no">
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <meta charset="utf-8" />
         <link rel="stylesheet" type="text/css" href="css/index.css">
         <link rel="stylesheet" type="text/css" href="css/jquery-1.5.0.mobile.min.css" />
         <link rel="stylesheet" type="text/css" href="css/spectrum.css" />
@@ -13,74 +14,81 @@
 
 
 
-        <title>Moodring2.0</title>
+               <title>Moodring2.0</title>
     </head>
 
     <!-- body -->
-    <body>
-<!--         <div id="status" name="status">Status Message</div>
- -->        <div class="app">
-            <h1>
+<body>
+         
+<div class="app">
 
-                <img src="img/logo.jpg" width="100" height="100"> 
-            </h1>
-                
+    <h1>
 
-            <h2 id="connectBlue">Your Moodmap</h2>
-            
+        <img src="img/logo.jpg" width="100" height="100"> 
+    </h1>
+                
+    <h2>Your Moodmap</h2>
+<!-- connect to device & show list -->
+    <div id="mainPage">
+        <ul id="deviceList">
+        </ul>
+        <button id="refreshButton">Connect Bluetooth</button>
+    </div>
+<!-- colors submit to ring when click "Update my ring a-tag" -->
+    <div id="detailPage">
 
-<!-- colors -->
-            <!-- color picker - moodMapping -->
-        <div id="emotionPage">
-                <div class="emotion" id="enjoyment">
-                   <p> Enjoyment - <span></span></p>
-                </div>
-                
-                <div class="emotion" id="sadness">
-                    <p> Sadness  - <span></span></p>
-                </div>
-                
-                <div class="emotion" id="disgust">
-                    <p> Disgust  - <span></span></p>
-                </div>
-                
-                <div class="emotion" id="fear">
-                    <p> Fear  - <span></span></p>
-                </div>
-                
-                <div class="emotion" id="anger">
-                    <p> Anger  - <span></span></p>
-                </div>
-        </div>
-
-<!-- data received from arduino -->
-<div id="detailPage">
         <div id="resultDiv">
-                    
+            </div>
+                  <!--  <input type="text" id="messageInput" value="Hello"/>
+            <button id="sendButton">Send</button> -->
+        <div class="emotion">
+            <div id="enjoyment">
+                <p> Enjoyment - <span id="rgbString"></span>
+                </p>
+            </div>
+                
+            <div id="sadness">
+                <p> Sadness  - <span id="rgbString"></span></p>
+            </div>
+                
+            <div id="disgust">
+                <p> Disgust  - <span id="rgbString"></span></p>
+            </div>
+                
+            <div id="fear">
+                <p> Fear  - <span id="rgbString"></span></p>
+            </div>
+                
+            <div id="anger">
+                <p> Anger  - <span id="rgbString"></span></p>
+            </div>
+            <br><br>
+        <!-- update ring on click -->
+            <button id="sendButton">Update my ring</button>
         </div>
+    </div>  
+    <br><br>
+   <p>
+        <a href="index.html">Reset</a>
+    </p>
+    <br><br>
 </div>
 
-<!-- return to color selection page -->
-       <br><br><br><br>
-       <p>
-        <a id="updateRing">Update my ring</a>
-        </p>
-                       
-
-       <!--      <div id="deviceready" class="blink">
+<!-- test that JS is working -->
+            <div id="deviceready" class="blink">
                 <p class="event listening">Connecting to Device</p>
-                <p class="event received">Device is Ready</p> -->
-            </div>
-        </div>
-        
+                <p class="event received">Device is Ready</p>     
 <!-- js tags -->
         <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript" src="js/ble.js"></script>
+        <script type="text/javascript" src="js/bluetooth.js">
+            app.initialize();
+        </script>
         <script type="text/javascript" src="js/jquery-1.5.0.mobile.min.js"></script>
         <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
         <script type="text/javascript" src="js/spectrum.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript" src="js/moodmap.js"></script>
+      
 
 
     </body>
