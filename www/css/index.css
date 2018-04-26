@@ -26,6 +26,10 @@
   color: white;
 }
 
+pre {
+    color: white;
+}
+
 body {
     -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
     -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
@@ -91,42 +95,80 @@ h3 {
 }
 
 p {
-  color: white;
-  text-align: center;
-  font-size: 14px;
-  font-weight: lighter;
-  letter-spacing: 2px;
-
+    color: white;
+    text-align: center;
+    font-size: 14px;
+    font-weight: lighter;
+    letter-spacing: 2px;
+    font-family: 'HelveticaNeue-Light', Helvetica, sans-serif, Arial;
 }
 
-/*results*/
+pre {
+    col or: white;
+    text-align: center;
+    font-size: 14px;
+    font-weight: lighter;
+    letter-spacing: 2px;
+    font-family: 'HelveticaNeue-Light', Helvetica, sans-serif, Arial;
+}
+/*moodmap specific pages*/
 
 #resultDiv {
     font: 16px 'HelveticaNeue-Light', Helvetica, sans-serif, Arial;
     font-weight: 200;
     display: block;
-    -webkit-border-radius: 6px;
     width: 100%;
     height: 20px;
-    text-align: left;    
+    text-align: center;    
     overflow: auto;
-}
-
-/*list item*/
-
-ul {
-    list-style: none;
-    text-align: left;
     color: white;
 }
 
-li {
-    margin-left: -40px;
-    padding: 5px;        
-    padding-top: 10px;
+#deviceList {
+    font: 16px 'HelveticaNeue-Light', Helvetica, sans-serif, Arial;
+    padding: 10px 5px;        
     min-height: 50px;  
     font-size: 0.9em;
-    color: white
+    color: white;
+    font-weight: 200;
+    display: block;
+    width: 100%;
+    text-align: center;    
+    overflow: auto;
+}
+
+#partnerMood {
+    font: 16px 'HelveticaNeue-Light', Helvetica, sans-serif, Arial;
+    padding: 10px 5px;        
+    min-height: 50px;  
+    font-size: 0.9em;
+    color: white;
+    font-weight: 200;
+    display: block;
+    width: 100%;
+    text-align: center;    
+    overflow: auto;
+}
+/*list item*/
+
+ul #deviceList {
+    list-style: none;
+    text-align: center;
+    color: white;
+    font: 16px 'HelveticaNeue-Light', Helvetica, sans-serif, Arial;
+}
+
+li #deviceList {
+    padding: 10px 5px;        
+    min-height: 50px;  
+    font-size: 0.9em;
+    color: white;
+    font-weight: 200;
+    display: block;
+    width: 100%;
+    font: 16px 'HelveticaNeue-Light', Helvetica, sans-serif, Arial;
+    text-align: center;    
+    overflow: auto;
 }
 
 
@@ -199,7 +241,7 @@ form #submit:disabled {
     cursor: default;
     opacity: 0.25; }
 
-/*a tages*/
+/*a tags*/
 a {
     font-size: 18px;
     border: solid 1px;
@@ -225,7 +267,21 @@ a {
     font-family: 'HelveticaNeue-Light', Helvetica, sans-serif, Arial;
 }
 
-#refreshButton {
+#connectButton {
+    font-size: 18px;
+    border: solid 1px;
+    border-radius: 25px;
+    padding: 15px;
+    position: center;
+    text-decoration: none;
+    font-weight: lighter;
+    letter-spacing: 2px;
+    color: aqua;
+    background-color: black;
+    font-family: 'HelveticaNeue-Light', Helvetica, sans-serif, Arial;
+}
+
+#cloudButton {
     font-size: 18px;
     border: solid 1px;
     border-radius: 25px;
