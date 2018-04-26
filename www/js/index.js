@@ -83,7 +83,7 @@ document.addEventListener( "DOMContentLoaded", function(){
     document.querySelector('a#submitSadness').addEventListener('click', saveSadnessHandler);
 
 });
-
+ 
 function saveSadnessHandler(){
     
     accountSetup( 'sadness' );
@@ -152,11 +152,11 @@ function accountSetup( cName ){
 // setting up a database but nothing is currently being stored 
 // should replace with connection to Watson IoT IBM Cloud and remove this script
 
-// var mydb;
-// var shortName = 'WebSqlDB';
-// var version = '1.0';
-// var displayName = 'WebSqlDB';
-// var maxSize = 65535;
+var mydb;
+var shortName = 'WebSqlDB';
+var version = '1.0';
+var displayName = 'WebSqlDB';
+var maxSize = 65535;
 
     //var enjoyment = window.localStorage.getItem( "enjoyment" ) ;
     //console.log( enjoyment );
@@ -164,13 +164,13 @@ function accountSetup( cName ){
     //$( "body#enjoyment .showPaletteOnly" ).val( enjoyment );
 
 
-// // create database
-// mydb = window.openDatabase(shortName, version, displayName, maxSize);
+// create database
+mydb = window.openDatabase(shortName, version, displayName, maxSize);
 
-// // create table in database
-// mydb.transaction(function(tx){
-//   tx.executeSql('CREATE TABLE IF NOT EXISTS moodMap(enjoyment TEXT NOT NULL, sadness TEXT NOT NULL, disgust TEXT NOT NULL, fear TEXT NOT NULL, anger TEXT NOT NULL);');
-// });
+// create table in database
+mydb.transaction(function(tx){
+  tx.executeSql('CREATE TABLE IF NOT EXISTS moodMap(enjoyment TEXT NOT NULL, sadness TEXT NOT NULL, disgust TEXT NOT NULL, fear TEXT NOT NULL, anger TEXT NOT NULL);');
+});
 
 
 

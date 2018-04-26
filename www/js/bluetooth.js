@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-/* global mainPage, deviceList, refreshButton */
+/* global mainPage, deviceList, connectButton */
 /* global detailPage, resultDiv, rgbString, sendButton, disconnectButton */
 /* global ble  */
 /* jshint browser: true , devel: true*/
@@ -44,7 +44,7 @@ var bluefruit = {
 };
 
 // var deviceList = document.querySelector('#deviceList');
-// var refreshButton = document.querySelector('#refreshButton');
+// var connectButton = document.querySelector('#connectButton');
 // var sendButton = document.querySelector('#sendButton');
 // var mainPage = document.querySelector('#mainPage');
 // var detailPage = document.querySelector('#detailPage');
@@ -58,8 +58,8 @@ var app = {
     },
     bindEvents: function() {
         document.addEventListener('deviceready', this.onDeviceReady, false);
-        refreshButton.addEventListener('touchstart', this.scanForDevice, false);
-        sendButton.addEventListener('click', this.sendData, false);
+        connectButton.addEventListener('touchstart', this.scanForDevice, false);
+        sendButton.addEventListener('touchstart', this.sendData, false);
         // disconnectButton.addEventListener('touchstart', this.disconnect, false);
         deviceList.addEventListener('touchstart', this.connect, false); // assume not scrolling
     },
@@ -68,9 +68,9 @@ var app = {
     },
     // looking for Bluetooth connection / device --- scanForDevice
     scanForDevice: function() {
-        deviceList.innerHTML = ''; // empties the list
+        deviceList.innerHTML = bluefruit.serviceUUID; // empties the list
         ble.scan([bluefruit.serviceUUID], 5, app.onDiscoverDevice, app.onError);
-        
+        // ble.connect([bluefruit.serviceUUID], onConnect, connectFailure);
         // if Android can't find your device try scanning for all devices
         // ble.scan([], 5, app.onDiscoverDevice, app.onError);
     },
@@ -85,6 +85,9 @@ var app = {
         listItem.dataset.deviceId = device.id;
         listItem.innerHTML = html;
         deviceList.appendChild(listItem);
+
+        //ble.connect(deviceId, app.onConnect, app.onError);
+
     },
     connect: function(e) {
         var deviceId = e.target.dataset.deviceId,
@@ -124,6 +127,8 @@ var app = {
         resultDiv.scrollTop = resultDiv.scrollHeight;
     },
     sendData: function(event) { // send data to Arduino
+        
+        var rgbString = document.querySelector('span#rgbString').value;
 
         var success = function() {
             console.log("success");
@@ -165,7 +170,7 @@ var app = {
         detailPage.hidden = false;
     },
     showDetailPage: function() {
-        mainPage.hidden = true;
+        mainPage.hidden = false;
         detailPage.hidden = false;
     },
     onError: function(reason) {
@@ -175,5 +180,6 @@ var app = {
 };
 
 app.initialize();
+
 
 
