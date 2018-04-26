@@ -2,46 +2,45 @@
 
 <html>
     <head>
-        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:; text/html;charset=ISO-8859-1;>
         <meta name="format-detection" content="telephone=no">
         <meta name="msapplication-tap-highlight" content="no">
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
-        <meta charset="utf-8" />
+        <<!-- meta charset="utf-8" /> -->
         <link rel="stylesheet" type="text/css" href="css/index.css">
         <link rel="stylesheet" type="text/css" href="css/jquery-1.5.0.mobile.min.css" />
         <link rel="stylesheet" type="text/css" href="css/spectrum.css" />
-
-
-
 
                <title>Moodring2.0</title>
     </head>
 
     <!-- body -->
-<body>
-         
-<div class="app">
+<body>  
+<div class="app"> 
 
+<!-- headers -->
     <h1>
-
         <img src="img/logo.jpg" width="100" height="100"> 
     </h1>
                 
-    <h2>Your Moodmap</h2>
-<!-- connect to device & show list -->
+    <h2>Your Moodmap</h2>   
+
+<!-- mainPage - connect to device & show list -->
     <div id="mainPage">
         <ul id="deviceList">
         </ul>
-        <button id="refreshButton">Connect Bluetooth</button>
+        <button id="connectButton">Connect Bluetooth</button>
     </div>
-<!-- colors submit to ring when click "Update my ring a-tag" -->
+
+<!-- detailPage - colors submit to ring when click "Update my ring a-tag" -->
     <div id="detailPage">
 
         <div id="resultDiv">
+            <!-- where data from your own ring will be displayed -->
             </div>
-                  <!--  <input type="text" id="messageInput" value="Hello"/>
-            <button id="sendButton">Send</button> -->
+
         <div class="emotion">
+
             <div id="enjoyment">
                 <p> Enjoyment - <span id="rgbString"></span>
                 </p>
@@ -63,32 +62,51 @@
                 <p> Anger  - <span id="rgbString"></span></p>
             </div>
             <br><br>
-        <!-- update ring on click -->
-            <button id="sendButton">Update my ring</button>
+        <!-- end of emotion class div -->
         </div>
-    </div>  
-    <br><br>
-   <p>
-        <a href="index.html">Reset</a>
+
+        <!-- update ring on click -->
+        <button id="sendButton">Update ring
+        </button>
+    </div> 
+    <br><br><p>
+        <a href="index.html">Reset my ring</a>
     </p>
     <br><br>
+    <p>
+        <a href="partner.html">View Corey's ring</a>
+    </p><br><br>
+     <p>
+        <a href="cloud.html">Send data</a>
+    </p><br><br><br><br>
+  
 </div>
 
 <!-- test that JS is working -->
-            <div id="deviceready" class="blink">
+      <!--       <div id="deviceready" class="blink">
                 <p class="event listening">Connecting to Device</p>
-                <p class="event received">Device is Ready</p>     
+                <p class="event received">Device is Ready</p>   -->   
 <!-- js tags -->
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/bluetooth.js">
-            app.initialize();
         </script>
         <script type="text/javascript" src="js/jquery-1.5.0.mobile.min.js"></script>
         <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
         <script type="text/javascript" src="js/spectrum.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript" src="js/moodmap.js"></script>
-      
+        <script type="text/javascript">
+            app.initialize();
+        </script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+    <!--<script type="text/javascript" src="./jquery311.js"></script>  -->
+    <script type="text/javascript" src="https://github.com/adafruit/io-issues/releases/download/mqttjs/mqtt.js"></script>
+   <!-- <script type="text/javascript" src="./mqtt.js"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <!--<script type="text/javascript" src="./jquery311.js"></script>  -->
+    <script type="text/javascript" src="https://github.com/adafruit/io-issues/releases/download/mqttjs/mqtt.js"></script>
+   <!-- <script type="text/javascript" src="./mqtt.js"></script> -->
 
 
     </body>
