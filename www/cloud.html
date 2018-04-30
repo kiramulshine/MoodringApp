@@ -11,9 +11,6 @@
 <link rel="stylesheet" type="text/css" href="css/index.css">
 
 <!-- scripts -->
-<script type="text/javascript" src="js/moodmap.js"></script>
-<script type="text/javascript" src="js/index.js"></script>
-<script type="text/javascript" src="js/bluetooth.js"></script>
 <script type="text/javascript" src="js/spectrum.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script type="text/javascript" src="js/jquery-1.5.0.mobile.min.js"></script>
@@ -62,17 +59,26 @@ client.on('message', function(topic, payload) {
   //window.AppInventor.setWebViewString(' '+ payload);
 });
             
-function shareData(){  
+function shareData(){
 
 var enjoyment = window.localStorage.getItem( "enjoyment" );
-var sadness = window.localStorage.getItem( "sadness" );
-var disgust = window.localStorage.getItem( "disgust" );
-var fear = window.localStorage.getItem( "fear" );
-var anger = window.localStorage.getItem( "anger" );
+client.publish(topic, enjoyment.toString());
 
-  client.publish(topic, "all my variables" );
-  $('pre').append('SENT: ' + counter + '\n');
-}
+var sadness = window.localStorage.getItem( "sadness" );
+client.publish(topic, sadness.toString());
+
+var disgust = window.localStorage.getItem( "disgust" );
+client.publish(topic, disgust.toString());
+
+var fear = window.localStorage.getItem( "fear" );
+client.publish(topic, fear.toString());
+
+var anger = window.localStorage.getItem( "anger" );
+client.publish(topic, anger.toString());
+
+  // client.publish(topic, "so we have an app for sending secret messages" );
+  // $('pre').append('SENT: ' + counter + '\n');
+};
 
 
 
@@ -87,9 +93,19 @@ var anger = window.localStorage.getItem( "anger" );
 <h2>Data Sent</h2> 
 <pre></pre> 
 <div id="receive"></div>
-    <button id="cloudButton" onclick="shareData()">Send Moodmap Data</button>
+    <button id="cloudButton" onClick="shareData()">Share map with Partner</button>
 
 <h2>Data Received</h2> 
 <div id="received"></div>
+    <br><br><p>
+        <a href="moodMap.html">Back to my map</a>
+    </p>
+    <br><br>
+
+    <p>
+        <a href="partner.html">View partner's map</a>
+    </p><br><br>
+
+
 </body>
 </html>

@@ -30,6 +30,7 @@
         <ul id="deviceList">
         </ul>
         <button id="connectButton">Connect Bluetooth</button>
+
     </div>
 
 <!-- detailPage - colors submit to ring when click "Update my ring a-tag" -->
@@ -39,46 +40,50 @@
             <!-- where data from your own ring will be displayed -->
             </div>
 
-        <div class="emotion">
+        <div id="emotion">
 
             <div id="enjoyment">
-                <p> Enjoyment - <span id="rgbString"></span>
+                <p> Enjoyment - <span></span>
                 </p>
             </div>
                 
             <div id="sadness">
-                <p> Sadness  - <span id="rgbString"></span></p>
+                <p> Sadness  - <span></span></p>
             </div>
                 
             <div id="disgust">
-                <p> Disgust  - <span id="rgbString"></span></p>
+                <p> Disgust  - <span></span></p>
             </div>
                 
             <div id="fear">
-                <p> Fear  - <span id="rgbString"></span></p>
+                <p> Fear  - <span></span></p>
             </div>
                 
             <div id="anger">
-                <p> Anger  - <span id="rgbString"></span></p>
+                <p> Anger  - <span></span></p>
             </div>
             <br><br>
         <!-- end of emotion class div -->
         </div>
 
         <!-- update ring on click -->
-        <button id="sendButton">Update ring
+        <button id="sendButton"> Update ring
         </button>
     </div> 
+    <br><br>
+    
+    <p>
+    <a href="cloud.html">Share with Partner</a>
+    </p><br><br><br><br>
+   
     <br><br><p>
         <a href="index.html">Reset my ring</a>
     </p>
     <br><br>
+    
     <p>
-        <a href="partner.html">View Corey's ring</a>
+        <a href="partner.html">View partner's map</a>
     </p><br><br>
-     <p>
-        <a href="cloud.html">Send data</a>
-    </p><br><br><br><br>
   
 </div>
 
@@ -100,14 +105,7 @@
         </script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
-    <!--<script type="text/javascript" src="./jquery311.js"></script>  -->
-    <script type="text/javascript" src="https://github.com/adafruit/io-issues/releases/download/mqttjs/mqtt.js"></script>
-   <!-- <script type="text/javascript" src="./mqtt.js"></script> -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <!--<script type="text/javascript" src="./jquery311.js"></script>  -->
-    <script type="text/javascript" src="https://github.com/adafruit/io-issues/releases/download/mqttjs/mqtt.js"></script>
-   <!-- <script type="text/javascript" src="./mqtt.js"></script> -->
-
+    
 
     </body>
 </html>
