@@ -23,8 +23,7 @@
         <img src="img/logo.jpg" width="100" height="100"> 
     </h1>
                 
-    <h2>Your Moodmap</h2>   
-
+    <h2>Update Moodmap</h2>  
 <!-- mainPage - connect to device & show list -->
     <div id="mainPage">
         <ul id="deviceList">
@@ -39,59 +38,61 @@
         <div id="resultDiv">
             <!-- where data from your own ring will be displayed -->
             </div>
+<!-- emotion color pickers -->
+        <div>
 
-        <div id="emotion">
-
-            <div id="enjoyment">
-                <p> Enjoyment - <span></span>
-
-                </p>
-            </div>
-                
-            <div id="sadness">
-                <p> Sadness  - <span></span></p>
-            </div>
-                
-            <div id="disgust">
-                <p> Disgust  - <span></span></p>
-            </div>
-                
-            <div id="fear">
-                <p> Fear  - <span></span></p>
-            </div>
-                
-            <div id="anger">
-                <p> Anger  - <span></span></p>
-            </div>
-            <br><br>
-        <!-- end of emotion class div -->
+            <input type="text" id="enjoymentInput" class="basic" value="#00ffff"/>
+            <button id="enjoymentButton">Update enjoyment</button>     
         </div>
 
-        <!-- update ring on new page -->
-    <br><br><p>
-        <a href="sendData.html">Update map</a>
-    </p>
-    <br><br>
-    </div> 
-    <br><br>
-    
-    <p>
-    <a href="cloud.html">Share with partner</a>
-    </p><br><br><br><br>
-    
-    <p>
-        <a href="partner.html">View partner's map</a>
+        <div>
+
+            <input type="text" id="sadnessInput" class="basic" value="#0000ff"/>
+            <button id="sadnessButton">Update sadness</button>                    
+        </div>
+
+        <div>
+
+            <input type="text" id="disgustInput" class="basic" value="#00ff00"/>
+            <button id="disgustButton">Update disgust</button>                    
+        </div>
+
+        <div>
+
+            <input type="text" id="fearInput" class="basic" value="#cc33ff"/>
+            <button id="fearButton">Update fear</button>                    
+        </div>
+
+        <div>
+
+            <input type="text" id="angerInput" class="basic" value="#ff0000"/>
+            <button id="angerButton">Update anger</button> 
+
+        </div>
+
+    <p><br><br>
+      <a href="cloud.html">Share with partner</a>
     </p><br><br>
-  
+
+    <p><br><br>
+      <a href="partner.html">View partner info</a>
+    </p><br><br><br><br>
+   
+    <!-- <br><br><p>
+        <a href="index.html">Reset map</a>
+    </p>
+    <br><br> -->
+
+<!--     <p>
+        <a href="moodMap.html">Back to my map</a>
+    </p><br><br> -->
+
+
 </div>
 
-<!-- test that JS is working -->
-      <!--       <div id="deviceready" class="blink">
-                <p class="event listening">Connecting to Device</p>
-                <p class="event received">Device is Ready</p>   -->   
 <!-- js tags -->
         <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript" src="js/bluetooth.js">
+        <script type="text/javascript" src="js/moodble.js">
         </script>
         <script type="text/javascript" src="js/jquery-1.5.0.mobile.min.js"></script>
         <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
@@ -103,7 +104,5 @@
         </script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
-    
-
-    </body>
+   </body>
 </html>
