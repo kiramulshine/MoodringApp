@@ -118,17 +118,25 @@ pre {
     font-weight: 200;
     display: block;
     width: 100%;
-    height: 20px;
+    height: 100px;
     text-align: center;    
     overflow: auto;
     color: white;
 }
 
+#emotion {
+    color: white;
+    text-align: center;
+    font-size: 14px;
+    font-weight: lighter;
+    letter-spacing: 2px;
+    font-family: 'HelveticaNeue-Light', Helvetica, sans-serif, Arial;
+}
+
 #deviceList {
-    font: 16px 'HelveticaNeue-Light', Helvetica, sans-serif, Arial;
+    font: 18px 'HelveticaNeue-Light', Helvetica, sans-serif, Arial;
     padding: 10px 5px;        
-    min-height: 50px;  
-    font-size: 0.9em;
+    height: 50px;  
     color: white;
     font-weight: 200;
     display: block;
@@ -151,22 +159,21 @@ pre {
 }
 /*list item*/
 
-ul #deviceList {
+#deviceList ul {
     list-style: none;
     text-align: center;
     color: white;
-    font: 16px 'HelveticaNeue-Light', Helvetica, sans-serif, Arial;
+    font: 18px 'HelveticaNeue-Light', Helvetica, sans-serif, Arial;
 }
 
-li #deviceList {
+#deviceList li {
     padding: 10px 5px;        
     min-height: 50px;  
-    font-size: 0.9em;
     color: white;
     font-weight: 200;
     display: block;
     width: 100%;
-    font: 16px 'HelveticaNeue-Light', Helvetica, sans-serif, Arial;
+    font: 18px 'HelveticaNeue-Light', Helvetica, sans-serif, Arial;
     text-align: center;    
     overflow: auto;
 }
@@ -175,7 +182,10 @@ li #deviceList {
 /*detail page*/
 
 #detailPage {
-    margin: 40px;
+    width: 100%;
+    color: white;
+    font: 16px 'HelveticaNeue-Light', Helvetica, sans-serif, Arial;
+
 }
 
 /*label*/
@@ -268,6 +278,77 @@ a {
 }
 
 #connectButton {
+    font-size: 18px;
+    border: solid 1px;
+    border-radius: 25px;
+    padding: 15px;
+    position: center;
+    text-decoration: none;
+    font-weight: lighter;
+    letter-spacing: 2px;
+    color: aqua;
+    background-color: black;
+    font-family: 'HelveticaNeue-Light', Helvetica, sans-serif, Arial;
+}
+
+
+#enjoymentButton {
+    font-size: 18px;
+    border: solid 1px;
+    border-radius: 25px;
+    padding: 15px;
+    position: center;
+    text-decoration: none;
+    font-weight: lighter;
+    letter-spacing: 2px;
+    color: aqua;
+    background-color: black;
+    font-family: 'HelveticaNeue-Light', Helvetica, sans-serif, Arial;
+}
+
+#sadnessButton {
+    font-size: 18px;
+    border: solid 1px;
+    border-radius: 25px;
+    padding: 15px;
+    position: center;
+    text-decoration: none;
+    font-weight: lighter;
+    letter-spacing: 2px;
+    color: aqua;
+    background-color: black;
+    font-family: 'HelveticaNeue-Light', Helvetica, sans-serif, Arial;
+}
+
+#disgustButton {
+    font-size: 18px;
+    border: solid 1px;
+    border-radius: 25px;
+    padding: 15px;
+    position: center;
+    text-decoration: none;
+    font-weight: lighter;
+    letter-spacing: 2px;
+    color: aqua;
+    background-color: black;
+    font-family: 'HelveticaNeue-Light', Helvetica, sans-serif, Arial;
+}
+
+#fearButton {
+    font-size: 18px;
+    border: solid 1px;
+    border-radius: 25px;
+    padding: 15px;
+    position: center;
+    text-decoration: none;
+    font-weight: lighter;
+    letter-spacing: 2px;
+    color: aqua;
+    background-color: black;
+    font-family: 'HelveticaNeue-Light', Helvetica, sans-serif, Arial;
+}
+
+#angerButton {
     font-size: 18px;
     border: solid 1px;
     border-radius: 25px;
