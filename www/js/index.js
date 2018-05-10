@@ -32,10 +32,25 @@ app.initialize();
 // **COLOR PICKER**
 // color picker script pulling from spectrum.js jquery 
 
-$(".basic").spectrum();
-$(".override").spectrum({
-    color: "yellow"
+$(".basic").spectrum({
+    showPaletteOnly: true,
+    hideAfterPaletteSelect:true,
+    change: function(color) {
+        printColor(color);
+    },
+    palette: [
+        ["#000000", "#606060", "#ffffff"],
+        ["#ff0000", "#ff9900", "#ffff00"], 
+        ["#00ff00", "#00ffff", "#00a5ff"], 
+        ["#0013f9", "#131a6b", "#6a00ff"], 
+        ["#9d00ff", "#f700b8", "#f4a1df"]
+    ]
 });
+// $(".override").spectrum({
+//     color: "yellow";
+// });
+
+
 
 $("#showPaletteOnly").spectrum({
     showPaletteOnly: true,
@@ -44,12 +59,11 @@ $("#showPaletteOnly").spectrum({
         printColor(color);
     },
     palette: [
-        ["#000000", "#606060", "#c4c4c4", "#ffffff"],
-        ["#980000", "#ff0000", "#ff3b00", "#ff9900"], 
-        ["#ffff00", "#00ff00", "#00ffff", "#00a5ff"], 
-        ["#19ff00", "#00ff90", "#279163", "#131a6b"], 
-        ["#0013f9", "#6a00ff", "#3e0096", "#9d00ff"], 
-        ["#d4a1f4", "#f4a1df", "#f23ac3", "#f700b8"]
+        ["#000000", "#606060", "#ffffff"],
+        ["#ff0000", "#ff9900", "#ffff00"], 
+        ["#00ff00", "#00ffff", "#00a5ff"], 
+        ["#0013f9", "#131a6b", "#6a00ff"], 
+        ["#9d00ff", "#f700b8", "#f4a1df"]
     ]
 });
 
@@ -146,6 +160,8 @@ function accountSetup( cName ){
     window.localStorage.setItem( cName , moodMap );
     return true;
 }
+
+
 
 
 // **DATABASE SCRIPTS**
